@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style/stylesheet.css" charset="utf-8">
+    <title>Add Pet</title>
+  </head>
+  <body>
+    <ul ng-include="'partials/navigation.html'"></ul>
+    <h1>Add Pet</h1>
+    <div id="addDiv" ng-controller="addController">
+      <input type="text" value="" ng-model="nameIn" placeholder="Name">
+      <input type="text" value="" ng-model="animalIn" placeholder="Animal Type">
+      <input type="text" value="" ng-model="ageIn" placeholder="Age">
+      <input type="text" value="" ng-model="imageIn" placeholder="Image Url">
+      <button id="add" ng-click='addRecord()'>Add</button>
+    </div>
+  </body>
+</html>

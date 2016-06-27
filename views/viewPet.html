@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style/stylesheet.css" charset="utf-8">
+    <title>View Pet</title>
+  </head>
+  <body>
+    <ul ng-include="'partials/navigation.html'"></ul>
+    <h1>View Pet</h1>
+    <div ng-controller="viewController"  ng-init='viewPets()'>
+      <table>
+        <thead>
+         <tr>
+           <th>Image</th>
+           <th><a href="#" ng-click="sortType='name'; sortReverse = !sortReverse">Name</a></th>
+           <th><a href="#" ng-click="sortType='animal'; sortReverse = !sortReverse">Animal Type</a></th>
+           <th><a href="#" ng-click="sortType='age'; sortReverse = !sortReverse">Age</a></th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr ng-repeat="record in allTheRecords | orderBy:sortType:sortReverse">
+           <td> <img ng-src="{{ record.image }}" style="width:100px;height:100px;"><br><button id='delete' type="button" ng-click='deletePet($index)'>Delete</button></td>
+           <td>{{ record.name }}</td>
+           <td>{{ record.animal }}</td>
+           <td>{{ record.age }}</td>
+
+         </tr>
+       </tbody>
+     </table>
+    </div>
+  </body>
+</html>

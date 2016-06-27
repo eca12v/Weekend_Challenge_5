@@ -1,0 +1,78 @@
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td{
+  width: 125px;
+  border: 5px ridge turquoise;
+  text-align: left;
+  vertical-align: top;
+  border-collapse: collapse;
+}
+th {
+background: #A1A1A1; /* Light grey background */
+font-weight: bold; /* Make sure they're bold */
+text-align: center;
+}
+td {
+background: #EAEAEA; /* Lighter grey background */
+text-align: center; /* Center our text */
+}
+#delete {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #1a1aff;
+  border: 1px solid black;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  padding: 4px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+
+}
+#delete:hover {
+  opacity: .5;
+}
+#addDiv {
+  border: 5px ridge magenta;
+  width:600px;
+  padding: 3px;
+}
+input {
+  border: 3px inset skyblue;
+}
+.navigation {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 8px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.navigation:hover{
+  opacity: .5;
+}
+#add {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #009900;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  padding: 4px;
+  width: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+#add:hover {
+  opacity: .5;
+}
