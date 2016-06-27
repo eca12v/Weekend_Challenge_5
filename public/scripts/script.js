@@ -26,8 +26,8 @@ myApp.controller('addController', ['$scope', '$http', function($scope, $http){
 // controller for show pets view
 myApp.controller( 'viewController', [ '$scope', '$http', function( $scope, $http ){
   // uncomment below to get sorting in table to work, screws up the delete button though.  not sure how to get the $index to work corectly when sorting is on
-  // $scope.sortType = 'name';
-  // $scope.sortReverse = true;
+  $scope.sortType = 'name';
+  $scope.sortReverse = true;
   $scope.allTheRecords = [];
   $scope.viewPets = function(){
     // get call to push document data from database into an array that is linked to ng-repeat in show pets view
@@ -42,15 +42,17 @@ myApp.controller( 'viewController', [ '$scope', '$http', function( $scope, $http
     });
   };
   //function to delete pets in table.  gets screwed up when sorting is used
-  $scope.deletePet = function(idx){
-    var petToDelete = $scope.allTheRecords[idx];
-    console.log(petToDelete._id);
+  $scope.deletePet = function(record){
+    console.log(record._id + '  ' + $scope.allTheRecords.indexOf(record));
+    var index = $scope.allTheRecords.indexOf(record);
+    var petToDelete = $scope.allTheRecords[index];
+    //console.log(petToDelete._id);
     var petId = {id: petToDelete._id};
     $http({
       method: 'POST',
       url: '/deletePet',
       data: petId
     });
-    $scope.allTheRecords.splice(idx, 1);
+    $scope.allTheRecords.splice(index, 1);
   };
 }]);

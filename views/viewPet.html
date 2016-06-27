@@ -21,8 +21,8 @@
          </tr>
        </thead>
        <tbody>
-         <tr ng-repeat="record in allTheRecords | orderBy:sortType:sortReverse">
-           <td> <img ng-src="{{ record.image }}" style="width:100px;height:100px;"><br><button id='delete' type="button" ng-click='deletePet($index)'>Delete</button></td>
+         <tr ng-repeat="record in allTheRecords | orderBy:sortType:sortReverse track by $index">
+           <td> <img ng-src="{{ record.image }}" style="width:100px;height:100px;"><br><button id='delete' type="button" ng-click='deletePet(record)'>Delete</button></td>
            <td>{{ record.name }}</td>
            <td>{{ record.animal }}</td>
            <td>{{ record.age }}</td>
