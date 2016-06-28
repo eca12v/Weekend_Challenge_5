@@ -41,8 +41,9 @@ myApp.controller( 'viewController', [ '$scope', '$http', function( $scope, $http
       console.log( response.statusText );
     });
   };
-  //function to delete pets in table.  gets screwed up when sorting is used
+  //function to delete pets in table.
   $scope.deletePet = function(record){
+    // Initially was using $index to delete but had to change to record because sorting crewed up the $index
     console.log(record._id + '  ' + $scope.allTheRecords.indexOf(record));
     var index = $scope.allTheRecords.indexOf(record);
     var petToDelete = $scope.allTheRecords[index];
